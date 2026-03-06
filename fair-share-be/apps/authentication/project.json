@@ -1,0 +1,26 @@
+{
+  "name": "authentication",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/authentication/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/authentication",
+        "main": "apps/authentication/src/main.ts",
+        "tsConfig": "apps/authentication/tsconfig.build.json",
+        "assets": []
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "authentication:build",
+        "watch": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "analytics",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/analytics/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/analytics",
+        "main": "apps/analytics/src/main.ts",
+        "tsConfig": "apps/analytics/tsconfig.build.json",
+        "assets": []
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "analytics:build",
+        "watch": true
+      }
+    }
+  },
+  "tags": []
+}
