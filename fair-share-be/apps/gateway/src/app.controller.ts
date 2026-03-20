@@ -1,6 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
-import { Throttle } from '@nestjs/throttler';
-import { AppService } from './app.service';
+import { Controller, Get } from "@nestjs/common";
+import { Throttle } from "@nestjs/throttler";
+import { AppService } from "./app.service";
 
 @Controller()
 export class AppController {
@@ -12,12 +12,12 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('health')
+  @Get("health")
   healthCheck() {
     return {
-      status: 'ok',
+      status: "ok",
       timestamp: new Date().toISOString(),
-      service: 'API Gateway',
+      service: "API Gateway",
     };
   }
 }
